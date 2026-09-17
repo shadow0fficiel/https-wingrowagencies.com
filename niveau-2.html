@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affiliés Niveau 2 - WinGrow Agences</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/niveau-2.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <a href="dashboard-xof.html" class="back-btn">
+                <i class="ri-arrow-left-line"></i>
+            </a>
+            <div class="logo">
+                <div class="logo-icon">W</div>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="page-badge">
+                <i class="ri-user-follow-line"></i>
+                <span>Niveau 2</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Page Title -->
+        <div class="page-title-card">
+            <div class="page-title-icon">
+                <i class="ri-user-follow-line"></i>
+            </div>
+            <div class="page-title-text">
+                <h1>Affiliés Actifs</h1>
+                <p>Niveau 2 - Filleuls de vos filleuls</p>
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-card-icon green">
+                    <i class="ri-group-line"></i>
+                </div>
+                <div class="stat-card-info">
+                    <span class="stat-card-value" id="totalUsers">8</span>
+                    <span class="stat-card-label">Utilisateurs</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-icon blue">
+                    <i class="ri-money-dollar-circle-line"></i>
+                </div>
+                <div class="stat-card-info">
+                    <span class="stat-card-value" id="totalAmount">8 000</span>
+                    <span class="stat-card-label">XAF Total</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Section -->
+        <div class="section">
+            <div class="search-row">
+                <div class="search-input-wrapper">
+                    <i class="ri-search-line"></i>
+                    <input type="text" id="searchInput" placeholder="Entrez le nom d'utilisateur...">
+                </div>
+                <button class="search-btn" id="searchBtn">Recherche</button>
+            </div>
+        </div>
+
+        <!-- Table Section -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-title">
+                    <i class="ri-list-check"></i>
+                    Commandes récentes
+                </div>
+                <span class="result-badge" id="tableCount">8 résultats</span>
+            </div>
+
+            <div class="table-wrapper">
+                <table class="data-table" id="affiliesTable">
+                    <thead>
+                        <tr>
+                            <th>Image</th>
+                            <th>Date/Heure</th>
+                            <th>Pays</th>
+                            <th>Téléphone</th>
+                            <th>Nom d'utilisateur</th>
+                            <th>Revenu</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr>
+                            <td>
+                                <div class="user-avatar">
+                                    <i class="ri-user-line"></i>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-info">
+                                    <span class="date-main">30/12/2025</span>
+                                    <span class="date-sub">14:45</span>
+                                </div>
+                            </td>
+                            <td><span class="country-tag">🇹🇬 Togo</span></td>
+                            <td class="phone-cell">+228 90 00 00 00</td>
+                            <td><span class="username-link">paul_tg</span></td>
+                            <td><span class="revenue-tag">1 000 XAF</span></td>
+                            <td><span class="status-badge active"><i class="ri-checkbox-circle-fill"></i></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-avatar">
+                                    <i class="ri-user-line"></i>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-info">
+                                    <span class="date-main">29/12/2025</span>
+                                    <span class="date-sub">11:20</span>
+                                </div>
+                            </td>
+                            <td><span class="country-tag">🇧🇯 Bénin</span></td>
+                            <td class="phone-cell">+229 97 00 00 00</td>
+                            <td><span class="username-link">ange_bj</span></td>
+                            <td><span class="revenue-tag">1 000 XAF</span></td>
+                            <td><span class="status-badge active"><i class="ri-checkbox-circle-fill"></i></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-avatar">
+                                    <i class="ri-user-line"></i>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-info">
+                                    <span class="date-main">28/12/2025</span>
+                                    <span class="date-sub">09:15</span>
+                                </div>
+                            </td>
+                            <td><span class="country-tag">🇨🇮 Côte d'Ivoire</span></td>
+                            <td class="phone-cell">+225 07 00 00 00</td>
+                            <td><span class="username-link">serge_ci</span></td>
+                            <td><span class="revenue-tag">1 000 XAF</span></td>
+                            <td><span class="status-badge active"><i class="ri-checkbox-circle-fill"></i></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-avatar">
+                                    <i class="ri-user-line"></i>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-info">
+                                    <span class="date-main">27/12/2025</span>
+                                    <span class="date-sub">16:30</span>
+                                </div>
+                            </td>
+                            <td><span class="country-tag">🇸🇳 Sénégal</span></td>
+                            <td class="phone-cell">+221 77 00 00 00</td>
+                            <td><span class="username-link">ibra_sn</span></td>
+                            <td><span class="revenue-tag">1 000 XAF</span></td>
+                            <td><span class="status-badge active"><i class="ri-checkbox-circle-fill"></i></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-avatar">
+                                    <i class="ri-user-line"></i>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-info">
+                                    <span class="date-main">26/12/2025</span>
+                                    <span class="date-sub">08:00</span>
+                                </div>
+                            </td>
+                            <td><span class="country-tag">🇲🇱 Mali</span></td>
+                            <td class="phone-cell">+223 70 00 00 00</td>
+                            <td><span class="username-link">moussa_ml</span></td>
+                            <td><span class="revenue-tag">1 000 XAF</span></td>
+                            <td><span class="status-badge pending"><i class="ri-time-line"></i></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-avatar">
+                                    <i class="ri-user-line"></i>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-info">
+                                    <span class="date-main">25/12/2025</span>
+                                    <span class="date-sub">14:10</span>
+                                </div>
+                            </td>
+                            <td><span class="country-tag">🇧🇫 Burkina</span></td>
+                            <td class="phone-cell">+226 70 00 00 00</td>
+                            <td><span class="username-link">yves_bf</span></td>
+                            <td><span class="revenue-tag">1 000 XAF</span></td>
+                            <td><span class="status-badge active"><i class="ri-checkbox-circle-fill"></i></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-avatar">
+                                    <i class="ri-user-line"></i>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-info">
+                                    <span class="date-main">24/12/2025</span>
+                                    <span class="date-sub">10:45</span>
+                                </div>
+                            </td>
+                            <td><span class="country-tag">🇳🇪 Niger</span></td>
+                            <td class="phone-cell">+227 90 00 00 00</td>
+                            <td><span class="username-link">ali_ne</span></td>
+                            <td><span class="revenue-tag">1 000 XAF</span></td>
+                            <td><span class="status-badge active"><i class="ri-checkbox-circle-fill"></i></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="user-avatar">
+                                    <i class="ri-user-line"></i>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="date-info">
+                                    <span class="date-main">23/12/2025</span>
+                                    <span class="date-sub">17:30</span>
+                                </div>
+                            </td>
+                            <td><span class="country-tag">🇬🇳 Guinée</span></td>
+                            <td class="phone-cell">+224 62 00 00 00</td>
+                            <td><span class="username-link">sory_gn</span></td>
+                            <td><span class="revenue-tag">1 000 XAF</span></td>
+                            <td><span class="status-badge active"><i class="ri-checkbox-circle-fill"></i></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Empty State -->
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <i class="ri-search-line"></i>
+                <p>Aucun résultat trouvé</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-text">
+        2026 © Wingrow by Psktech 
+    </footer>
+
+    <script src="js/niveau-2.js"></script>
+</body>
+</html>

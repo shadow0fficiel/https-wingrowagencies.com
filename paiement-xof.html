@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Paiement d’activation - WinGrow XOF</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS spécifique à cette page -->
+  <link rel="stylesheet" href="css/paiement-xof.css">
+</head>
+
+<body>
+
+  <main class="payment-container">
+
+    <h2>Activation du compte WinGrow Agencies</h2>
+
+    <p class="description">
+      Pour activer votre compte, veuillez payer les frais d’activation.
+    </p>
+
+    <h3 class="amount">
+      Montant : <strong>5 000 FCFA</strong>
+    </h3>
+
+    <form id="paymentForm">
+
+      <!-- Réseau -->
+      <label for="reseau">Réseau de paiement</label>
+      <select id="reseau" required>
+        <option value="">-- Choisir un réseau --</option>
+        <!-- Les réseaux seront injectés dynamiquement par JS -->
+      </select>
+
+      <!-- Numéro -->
+      <label for="numero">Numéro mobile</label>
+      <input
+        type="tel"
+        id="numero"
+        placeholder="Ex : 90xxxxxx"
+        required
+      >
+
+      <!-- Bouton -->
+      <button type="submit">
+        Payer maintenant
+      </button>
+
+    </form>
+
+  </main>
+
+  <!-- JS spécifique à cette page -->
+  <script src="js/paiement-xof.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,685 @@
+/* ========================================
+   WinGrow Agences - Dashboard XAF
+   ======================================== */
+
+   * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background: #f0f4f8;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .green { color: #22c55e; }
+  .blue { color: #3b82f6; }
+  .orange { color: #f59e0b; }
+  
+  /* ========================================
+     Header
+     ======================================== */
+  .header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: white;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .menu-btn {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  
+  .logo-icon {
+    width: 34px;
+    height: 34px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 16px;
+  }
+  
+  .header-user {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+    padding: 6px 12px;
+    border-radius: 20px;
+  }
+  
+  .header-user-avatar {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+  
+  .header-user-name {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  /* ========================================
+     Slide Menu
+     ======================================== */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .slide-menu {
+    position: fixed;
+    top: 0;
+    left: -280px;
+    width: 280px;
+    height: 100%;
+    background: white;
+    z-index: 300;
+    transition: left 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  
+  .slide-menu.active {
+    left: 0;
+  }
+  
+  .menu-header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 20px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .menu-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .menu-brand-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 18px;
+    color: white;
+  }
+  
+  .menu-brand-text {
+    font-weight: 700;
+    font-size: 18px;
+  }
+  
+  .menu-brand-text .green { color: #86efac; }
+  .menu-brand-text .blue { color: #93c5fd; }
+  
+  .menu-close {
+    background: rgba(255,255,255,0.1);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .menu-list {
+    list-style: none;
+    padding: 10px 0;
+    flex: 1;
+  }
+  
+  .menu-list .menu-item > a,
+  .menu-list .menu-item > .menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #334155;
+    font-size: 13px;
+    font-weight: 500;
+    border-left: 3px solid transparent;
+    cursor: pointer;
+    background: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+    width: 100%;
+  }
+  
+  .menu-list .menu-item.active > a {
+    background: #f0fdf4;
+    color: #16a34a;
+    border-left-color: #22c55e;
+  }
+  
+  .menu-list .menu-item i {
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+  }
+  
+  .menu-toggle {
+    justify-content: space-between;
+  }
+  
+  .menu-toggle-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .menu-toggle .ri-arrow-down-s-line {
+    transition: transform 0.3s;
+  }
+  
+  .menu-item.open .menu-toggle .ri-arrow-down-s-line {
+    transform: rotate(180deg);
+  }
+  
+  .submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: #f8fafc;
+  }
+  
+  .menu-item.open .submenu {
+    max-height: 500px;
+  }
+  
+  .submenu a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px 10px 56px;
+    text-decoration: none;
+    color: #64748b;
+    font-size: 12px;
+  }
+  
+  .submenu a i {
+    font-size: 14px;
+  }
+  
+  .menu-divider {
+    height: 1px;
+    background: #e2e8f0;
+    margin: 10px 15px;
+  }
+  
+  .menu-footer {
+    padding: 15px;
+    border-top: 1px solid #e2e8f0;
+  }
+  
+  .logout-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    background: #fef2f2;
+    color: #dc2626;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  
+  /* ========================================
+     Dashboard
+     ======================================== */
+  .dashboard {
+    padding: 12px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  
+  /* ========================================
+     Balance Card
+     ======================================== */
+  .balance-card {
+    background: linear-gradient(135deg, #16213e 0%, #1a1a2e 50%, #22c55e 150%);
+    border-radius: 14px;
+    padding: 16px;
+    color: white;
+    margin-bottom: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .balance-card::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -20%;
+    width: 120px;
+    height: 120px;
+    background: rgba(34, 197, 94, 0.15);
+    border-radius: 50%;
+  }
+  
+  .balance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .balance-label {
+    font-size: 11px;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .balance-badge {
+    background: rgba(34, 197, 94, 0.3);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    color: #86efac;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .balance-amount {
+    font-size: 26px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .balance-amount span {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.9;
+  }
+  
+  .balance-sub {
+    display: flex;
+    gap: 15px;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  .balance-sub-item {
+    flex: 1;
+  }
+  
+  .balance-sub-label {
+    font-size: 10px;
+    opacity: 0.7;
+    margin-bottom: 2px;
+  }
+  
+  .balance-sub-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .balance-sub-value {
+    font-size: 13px;
+    font-weight: 600;
+  }
+  
+  .balance-sub-value.green { color: #86efac; }
+  .balance-sub-value.orange { color: #fbbf24; }
+  
+  .eye-btn {
+    background: rgba(255,255,255,0.15);
+    border: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    color: rgba(255,255,255,0.7);
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* ========================================
+     Mini Stats
+     ======================================== */
+  .mini-stats {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  
+  .mini-stat {
+    flex: 1;
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #e2e8f0;
+  }
+  
+  .mini-stat i {
+    font-size: 18px;
+    color: #3b82f6;
+  }
+  
+  .mini-stat div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mini-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1;
+  }
+  
+  .mini-label {
+    font-size: 9px;
+    color: #94a3b8;
+  }
+  
+  /* ========================================
+     WhatsApp Box
+     ======================================== */
+  .whatsapp-box {
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 12px;
+    border: 1px solid #86efac;
+  }
+  
+  .whatsapp-box.hidden {
+    display: none;
+  }
+  
+  .whatsapp-box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .whatsapp-box-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #166534;
+  }
+  
+  .whatsapp-box-title i {
+    color: #25D366;
+    font-size: 18px;
+  }
+  
+  .whatsapp-box-close {
+    background: rgba(0,0,0,0.1);
+    border: none;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    color: #166534;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .whatsapp-box-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #86efac;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    background: white;
+    color: #1e293b;
+    margin-bottom: 10px;
+  }
+  
+  .whatsapp-box-input:focus {
+    border-color: #25D366;
+  }
+  
+  .whatsapp-box-input::placeholder {
+    color: #94a3b8;
+  }
+  
+  .whatsapp-box-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.2s;
+  }
+  
+  .whatsapp-box-btn:active {
+    transform: scale(0.98);
+  }
+  
+  /* ========================================
+     Section
+     ======================================== */
+  .section {
+    background: white;
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 12px;
+    border: 1px solid #e2e8f0;
+  }
+  
+  .section-header {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .section-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .section-link {
+    font-size: 11px;
+    color: #3b82f6;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  /* ========================================
+     Weekly Tasks
+     ======================================== */
+  .weekly-task-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: #f8fafc;
+    border-radius: 10px;
+    margin-bottom: 8px;
+    border: 1px solid #e2e8f0;
+  }
+  
+  .weekly-task-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  .weekly-task-day {
+    min-width: 70px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #1e293b;
+  }
+  
+  .weekly-task-day span {
+    display: block;
+    font-size: 9px;
+    font-weight: 400;
+    color: #94a3b8;
+  }
+  
+  .weekly-task-divider {
+    width: 2px;
+    height: 30px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    border-radius: 2px;
+    margin: 0 12px;
+  }
+  
+  .weekly-task-info {
+    flex: 1;
+  }
+  
+  .weekly-task-name {
+    font-size: 12px;
+    color: #334155;
+  }
+  
+  .weekly-task-arrow {
+    color: #94a3b8;
+    font-size: 18px;
+  }
+  
+  /* ========================================
+     Referral
+     ======================================== */
+  .referral-row {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .referral-input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #1e293b;
+    background: #f8fafc;
+    outline: none;
+  }
+  
+  .referral-btn {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* ========================================
+     Footer
+     ======================================== */
+  .footer-text {
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    padding: 10px 0 20px;
+  }
+  
+  /* ========================================
+     Toast
+     ======================================== */
+  .toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e293b;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 13px;
+    z-index: 1000;
+    animation: slideUp 0.3s ease;
+  }
+  
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }

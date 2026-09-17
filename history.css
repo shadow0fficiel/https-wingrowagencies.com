@@ -1,0 +1,70 @@
+.history-card {
+    max-width: 900px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.history-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.history-desc {
+    font-size: 14px;
+    color: var(--text-gray);
+    margin-bottom: 30px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.history-table th {
+    background-color: #f1f5f9;
+    padding: 14px;
+    text-align: left;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.history-table td {
+    padding: 14px;
+    border-bottom: 1px solid #e5e7eb;
+    color: #374151;
+}
+
+.history-table tr:hover {
+    background-color: #f8fafc;
+}
+
+/* Statuts */
+.status {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status.success {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.status.pending {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+.status.failed {
+    background-color: #fee2e2;
+    color: #991b1b;
+}

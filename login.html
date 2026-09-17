@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WinGrow Agenceis - Connexion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <div class="login-container">
+    <!-- Logo -->
+    <div class="login-logo">
+      <div class="logo-icon">W</div>
+      <div class="logo-text">WinGrow</div>
+      <p class="logo-subtitle">Agenceis</p>
+    </div>
+
+    <!-- Formulaire de connexion -->
+    <div class="login-card">
+      <h1 class="login-title">Connexion</h1>
+      <p class="login-subtitle">Accédez à votre espace personnel</p>
+
+      <form class="login-form" id="loginForm">
+        <!-- Email ou Téléphone -->
+        <div class="input-group">
+          <div class="input-icon">
+            <i class="ri-user-line"></i>
+          </div>
+          <input 
+            type="text" 
+            id="identifier" 
+            placeholder="Email ou numéro de téléphone" 
+            autocomplete="username"
+            required
+          >
+        </div>
+
+        <!-- Mot de passe -->
+        <div class="input-group">
+          <div class="input-icon">
+            <i class="ri-lock-line"></i>
+          </div>
+          <input 
+            type="password" 
+            id="password" 
+            placeholder="Mot de passe" 
+            autocomplete="current-password"
+            required
+          >
+          <button type="butto" class="toggle-password" id="togglePassword">
+            <i class="ri-eye-off-line"></i>
+          </button>
+        </div>
+
+        <!-- Options -->
+        <div class="login-options">
+          <label class="remember-me">
+            <input type="checkbox" id="rememberMe">
+            <span class="checkmark"></span>
+            Se souvenir de moi
+          </label>
+          <a href="forgot-password.html" class="forgot-link">Mot de passe oublié ?</a>
+        </div>
+
+        <!-- Bouton Connexion -->
+        <button type="submit" class="login-btn" id="loginBtn">
+          <span class="btn-text">Se connecter</span>
+          <span class="btn-loader" style="display: none;">
+            <i class="ri-loader-4-line"></i>
+          </span>
+        </button>
+
+        <!-- Message d'erreur -->
+        <div class="error-message" id="errorMessage"></div>
+      </form>
+
+      <!-- Séparateur -->
+      <div class="divider">
+        <span>ou</span>
+      </div>
+
+      <!-- Lien Inscription -->
+      <div class="register-link">
+        <p>Vous n'avez pas de compte ?</p>
+        <a href="inscription.html">Créer un compte</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <p class="login-footer">
+      2026 © Wingrow by Psktech 
+    </p>
+  </div>
+
+  <script src="js/login.js"></script>
+</body>
+</html>

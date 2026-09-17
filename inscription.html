@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-a8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription gratuite – WinGrow Agenceis</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/inscription.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <div class="logo-icon">W</div>
+      <div class="logo-text">WinGrow Agenceis</div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="main-content">
+    <h1 class="hero-title">Inscription <span class="highlight-green">Gratuite</span></h1>
+    <p class="hero-description">
+      
+    </p>
+
+    <form id="signupForm" class="signup-form">
+
+      <!-- 1. Nom d'utilisateur -->
+      <div class="form-group">
+        <label>Nom d'utilisateur</label>
+        <input type="text" placeholder="Saisissez votre nom d'utilisateur" required>
+      </div>
+
+      <!-- 2. Adresse email -->
+      <div class="form-group">
+        <label>Adresse email</label>
+        <input type="email" placeholder="Saisissez votre adresse e-mail" required>
+      </div>
+
+      <!-- 3. Sélection du pays (CFA uniquement) -->
+      <div class="form-group">
+        <label>Sélectionner votre pays</label>
+        <select required>
+          <optgroup label="--selectionner votre pays--">
+            <option value="">---</option>
+            <option value="BJ">🇧🇯 Bénin</option>
+            <option value="BF">🇧🇫 Burkina Faso</option>
+            <option value="CI">🇨🇮 Côte d'Ivoire</option>
+            <option value="GW">🇬🇼 Guinée-Bissau</option>
+            <option value="ML">🇲🇱 Mali</option>
+            <option value="NE">🇳🇪 Niger</option>
+            <option value="SN">🇸🇳 Sénégal</option>
+            <option value="TG">🇹🇬 Togo</option>
+            <option value="CM">🇨🇲 Cameroun</option>
+            <option value="CF">🇨🇫 Centrafrique</option>
+            <option value="TD">🇹🇩 Tchad</option>
+            <option value="CG">🇨🇬 Congo</option>
+            <option value="GQ">🇬🇶 Guinée Équatoriale</option>
+            <option value="GA">🇬🇦 Gabon</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <!-- 4. Numéro de téléphone -->
+      <div class="form-group">
+        <label>Numéro de téléphone</label>
+        <input type="tel" placeholder="Saisissez votre numéro de téléphone" required>
+      </div>
+
+      <!-- 5. Nom du parrain -->
+      <div class="form-group">
+        <label>Nom du parrain</label>
+        <input type="text" id="parrain" readonly>
+      </div>
+
+      <!-- 6. Mot de passe -->
+      <div class="form-group">
+        <label>Mot de passe</label>
+        <input type="password" placeholder="Saisissez votre mot de passe" required>
+      </div>
+
+      <!-- 7. Confirmer mot de passe -->
+      <div class="form-group">
+        <label>Confirmez le mot de passe</label>
+        <input type="password" placeholder="Confirmez le mot de passe" required>
+      </div>
+
+      <!-- 8. Conditions -->
+      <div class="form-group checkbox">
+        <input type="checkbox" id="terms">
+        <label for="terms">
+          J'accepte les <a href="#">conditions générales</a>
+        </label>
+      </div>
+
+      <!-- 9. S'inscrire -->
+      <button type="submit" class="btn btn-green">
+        <i class="ri-user-add-line"></i>
+        S'inscrire
+      </button>
+
+    </form>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    2026 © Wingrow by Psktech 
+  </footer>
+
+  <!-- JS -->
+  <script src="js/inscription.js"></script>
+</body>
+</html>

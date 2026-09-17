@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WinGrow Agences - Dashboard XOF</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/dashboard-xof.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <button class="menu-btn" id="menuBtn">
+        <i class="ri-menu-line"></i>
+      </button>
+      <div class="logo">
+        <div class="logo-icon">W</div>
+      </div>
+    </div>
+    <div class="header-user">
+      <div class="header-user-avatar">
+        <i class="ri-user-line"></i>
+      </div>
+      <span class="header-user-name" id="headerUsername">Utilisateur</span>
+    </div>
+  </header>
+
+  <!-- Slide Menu -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+  <nav class="slide-menu" id="slideMenu">
+    <div class="menu-header">
+      <div class="menu-brand">
+        <div class="menu-brand-icon">W</div>
+        <div class="menu-brand-text"><span class="green">Win</span><span class="blue">Grow</span></div>
+      </div>
+      <button class="menu-close" id="menuClose">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+
+    <ul class="menu-list">
+      <li class="menu-item active">
+        <a href="dashboard-xof.html"><i class="ri-home-5-line"></i><span>Accueil</span></a>
+      </li>
+
+      <li class="menu-item">
+        <div class="menu-toggle">
+          <div class="menu-toggle-content"><i class="ri-team-line"></i><span>Mon Équipe</span></div>
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+        <div class="submenu">
+          <a href="niveau-1.html"><i class="ri-user-add-line"></i>Niveau 1</a>
+          <a href="niveau-2.html"><i class="ri-user-follow-line"></i>Niveau 2</a>
+          <a href="niveau-3.html"><i class="ri-user-star-line"></i>Niveau 3</a>
+          <a href="inactifs.html"><i class="ri-user-unfollow-line"></i>Non actifs</a>
+        </div>
+      </li>
+
+      <li class="menu-item">
+        <div class="menu-toggle">
+          <div class="menu-toggle-content"><i class="ri-task-line"></i><span>Tâches</span></div>
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+        <div class="submenu">
+          <a href="#"><i class="ri-calendar-line"></i>Tâches de Lundi</a>
+          <a href="#"><i class="ri-calendar-line"></i>Tâches de Mardi</a>
+          <a href="#"><i class="ri-calendar-line"></i>Tâches de Mercredi</a>
+          <a href="#"><i class="ri-calendar-line"></i>Tâches de Jeudi</a>
+          <a href="#"><i class="ri-calendar-line"></i>Tâches de Vendredi</a>
+        </div>
+      </li>
+
+      <li class="menu-item">
+        <div class="menu-toggle">
+          <div class="menu-toggle-content"><i class="ri-wallet-3-line"></i><span>Portefeuille</span></div>
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+        <div class="submenu">
+          <a href="#"><i class="ri-money-dollar-circle-line"></i>Portefeuille Lundi</a>
+          <a href="#"><i class="ri-money-dollar-circle-line"></i>Portefeuille Mardi</a>
+          <a href="#"><i class="ri-money-dollar-circle-line"></i>Portefeuille Mercredi</a>
+          <a href="#"><i class="ri-money-dollar-circle-line"></i>Portefeuille Jeudi</a>
+          <a href="#"><i class="ri-money-dollar-circle-line"></i>Portefeuille Vendredi</a>
+        </div>
+      </li>
+
+      <li class="menu-item">
+        <div class="menu-toggle">
+          <div class="menu-toggle-content"><i class="ri-bank-card-line"></i><span>Retrait</span></div>
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+        <div class="submenu">
+          <a href="withdraw.html"><i class="ri-wallet-line"></i>Balance Générale</a>
+          <a href="#"><i class="ri-money-dollar-circle-line"></i>Portefeuille Lundi</a>
+          <a href="#"><i class="ri-money-dollar-circle-line"></i>Portefeuille Mardi</a>
+          <a href="#"><i class="ri-money-dollar-circle-line"></i>Portefeuille Mercredi</a>
+          <a href="#"><i class="ri-money-dollar-circle-line"></i>Portefeuille Jeudi</a>
+          <a href="#"><i class="ri-money-dollar-circle-line"></i>Portefeuille Vendredi</a>
+          <a href="history.html"><i class="ri-wallet-3-line"></i>Historiques des Retraits</a>
+        </div>
+      </li>
+
+      <div class="menu-divider"></div>
+
+      <li class="menu-item">
+        <a href="#"><i class="ri-gift-2-line"></i><span>Bonus de bienvenue</span></a>
+      </li>
+
+      <li class="menu-item">
+        <a href="#"><i class="ri-compass-3-line"></i><span>Roue fortune</span></a>
+      </li>
+
+      <li class="menu-item">
+        <div class="menu-toggle">
+          <div class="menu-toggle-content"><i class="ri-community-line"></i><span>Communauté</span></div>
+          <i class="ri-arrow-down-s-line"></i>
+        </div>
+        <div class="submenu">
+          <a href="#"><i class="ri-telegram-line"></i>Canal Télégramme</a>
+          <a href="#"><i class="ri-whatsapp-line"></i>Chaîne WhatsApp</a>
+        </div>
+      </li>
+
+      <li class="menu-item">
+        <a href="#"><i class="ri-customer-service-2-line"></i><span>Service client</span></a>
+      </li>
+
+      <li class="menu-item">
+        <a href="profil.html"><i class="ri-user-settings-line"></i><span>Mon Profil</span></a>
+      </li>
+    </ul>
+
+    <div class="menu-footer">
+      <a href="login.html" class="logout-btn">
+        <i class="ri-logout-box-line"></i>
+        <span>Déconnexion</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- Dashboard Content -->
+  <div class="dashboard">
+    <!-- Balance Card -->
+    <div class="balance-card">
+      <div class="balance-header">
+        <div class="balance-label">
+          <i class="ri-wallet-3-line"></i>
+          Solde Total
+        </div>
+        <div class="balance-badge">
+          <i class="ri-user-line"></i>
+          <span id="balanceUsername">Utilisateur</span>
+        </div>
+      </div>
+      <div class="balance-amount">1 250 000 <span>XOF</span></div>
+
+      <div class="balance-sub">
+        <div class="balance-sub-item">
+          <div class="balance-sub-label">Solde disponible</div>
+          <div class="balance-sub-row">
+            <div class="balance-sub-value green" id="soldeDisponible" data-value="850 000 XOF">850 000 XOF</div>
+            <button class="eye-btn" id="toggleSolde">
+              <i class="ri-eye-line"></i>
+            </button>
+          </div>
+        </div>
+        <div class="balance-sub-item">
+          <div class="balance-sub-label">Total retiré</div>
+          <div class="balance-sub-row">
+            <div class="balance-sub-value orange" id="totalRetire" data-value="400 000 XOF">400 000 XOF</div>
+            <button class="eye-btn" id="toggleRetire">
+              <i class="ri-eye-line"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mini Stats -->
+    <div class="mini-stats">
+      <div class="mini-stat">
+        <i class="ri-team-line"></i>
+        <div>
+          <span class="mini-value">24</span>
+          <span class="mini-label">Filleuls</span>
+        </div>
+      </div>
+      <div class="mini-stat">
+        <i class="ri-gift-line"></i>
+        <div>
+          <span class="mini-value">125K</span>
+          <span class="mini-label">Commissions</span>
+        </div>
+      </div>
+      <div class="mini-stat">
+        <i class="ri-vip-crown-line"></i>
+        <div>
+          <span class="mini-value">VIP</span>
+          <span class="mini-label">Niveau</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WhatsApp Compact -->
+    <div class="whatsapp-box" id="whatsappSection">
+      <div class="whatsapp-box-header">
+        <div class="whatsapp-box-title">
+          <i class="ri-whatsapp-line"></i>
+          <span>Numéro WhatsApp</span>
+        </div>
+        <button class="whatsapp-box-close" id="whatsappClose">
+          <i class="ri-close-line"></i>
+        </button>
+      </div>
+      <input type="tel" class="whatsapp-box-input" id="whatsappInput" placeholder="Entrez votre numéro WhatsApp">
+      <button class="whatsapp-box-btn" id="whatsappBtn">
+        <i class="ri-send-plane-fill"></i>
+        Enregistrer
+      </button>
+    </div>
+
+    <!-- Weekly Tasks -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-title">
+          <i class="ri-calendar-check-line"></i>
+          Tâches de la semaine
+        </div>
+      </div>
+
+      <div class="weekly-task-item">
+        <div class="weekly-task-day">Lundi<span>08H00</span></div>
+        <div class="weekly-task-divider"></div>
+        <div class="weekly-task-info"><span class="weekly-task-name">Regarder une vidéo</span></div>
+      </div>
+
+      <div class="weekly-task-item">
+        <div class="weekly-task-day">Mardi<span>08H00</span></div>
+        <div class="weekly-task-divider"></div>
+        <div class="weekly-task-info"><span class="weekly-task-name">Partager sur réseaux</span></div>
+      </div>
+
+      <div class="weekly-task-item">
+        <div class="weekly-task-day">Mercredi<span>08H00</span></div>
+        <div class="weekly-task-divider"></div>
+        <div class="weekly-task-info"><span class="weekly-task-name">Liker nos publications</span></div>
+      </div>
+
+      <div class="weekly-task-item">
+        <div class="weekly-task-day">Jeudi<span>08H00</span></div>
+        <div class="weekly-task-divider"></div>
+        <div class="weekly-task-info"><span class="weekly-task-name">Inviter un affilié</span></div>
+      </div>
+
+      <div class="weekly-task-item">
+        <div class="weekly-task-day">Vendredi<span>08H00</span></div>
+        <div class="weekly-task-divider"></div>
+        <div class="weekly-task-info"><span class="weekly-task-name">Bonus spécial</span></div>
+      </div>
+    </div>
+
+    <!-- Referral -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-title">
+          <i class="ri-link"></i>
+          Mon lien de parrainage
+        </div>
+      </div>
+      <div class="referral-row">
+        <input type="text" id="refLink" class="referral-input" readonly>
+        <button id="copyBtn" class="referral-btn"><i class="ri-file-copy-line"></i></button>
+      </div>
+    </div>
+
+    <!-- Task Balance -->
+    <div class="balance-card">
+    
+      <div class="balance-header">
+        <i class="ri-wallet-3-line"> Lundi</i> <p class="balance-amount">1 000 <span>XOF</span></p>
+      </div>
+     
+      <div class="balance-header">
+        <i class="ri-wallet-3-line"> Mardi</i> <p class="balance-amount">1 000 <span>XOF</span></p>
+      </div>
+    
+      <div class="balance-header">
+        <i class="ri-wallet-3-line"> Mercredi</i> <p class="balance-amount">1 000 <span>XOF</span></p>
+      </div>
+    
+      <div class="balance-header">
+        <i class="ri-wallet-3-line"> Jeudi</i> <p class="balance-amount">1 000 <span>XOF</span></p>
+      </div>
+    
+      <div class="balance-header">
+        <i class="ri-wallet-3-line"> Vendredi</i> <p class="balance-amount">1 000 <span>XOF</span></p>
+      </div>
+      
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-text">
+      2026 © Wingrow by Psktech 
+    </div>
+  </div>
+
+  <script src="js/dashboard-xof.js"></script>
+</body>
+</html>
